@@ -1,0 +1,204 @@
+/*Google font 'Poppins'*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+/*common variables*/
+:root {
+  --blue: #0096ff;
+  --blue-light: rgb(0, 150, 255, 0.8);
+  --purple: #9c19e0;
+  --purple-light: rgb(156, 25, 224, 0.1);
+  --grey: #dfe5fc;
+  --white: #ffffff;
+  --red: #ff597b;
+  --shadow-1: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  --shadow-2: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("banr.png");
+}
+
+.popup-btn {
+  position: absolute;
+  width: 250px;
+  padding: 0.65rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  border: transparent;
+  background: linear-gradient(180deg, #936648 20%, #c5a474 50%);
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+  transition: transform 0.2s, font-size 0.2s;
+}
+
+.popup-btn:hover {
+  font-size: 1.25rem;
+  transform: scaleX(1.03);
+}
+
+.popup {
+  opacity: 0;
+  border-radius: 8px;
+  margin-top: -1100px;
+  background-color: #c5a474;
+  box-shadow: var(--shadow-1);
+  transform: scale(0.1);
+  z-index: 2;
+  transition: transform 0.8s, opacity 0.5s, margin-top 0.8s;
+}
+
+.popup.active {
+  opacity: 1;
+  margin-top: 0px;
+  transform: scale(1);
+}
+
+.popup-top {
+  position: relative;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: #f8w5ca;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: linear-gradient(180deg, #936648 20%, #c5a474 50%);
+}
+
+.popup-top .email-icon {
+  position: absolute;
+  top: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  background-color: #936648;
+}
+
+.popup-top #close-icon {
+  position: absolute;
+  right: 0.9rem;
+  top: 0.7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.popup-top #close-icon:hover {
+  color: var(--red);
+}
+
+.popup-top h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.popup-top p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.popup-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.popup-bottom input {
+  width: 100%;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  outline: none;
+  transition: color 0.3s, background-color 0.3s, border 0.2s;
+}
+
+.popup-bottom input::placeholder {
+  color: #f8w5ca;
+}
+
+.popup-bottom input:focus,
+.popup-bottom input:active {
+  color: var(--purple);
+  background-color: var(--purple-light);
+  border: 2px solid var(--purple);
+}
+
+.popup-bottom input:focus::placeholder,
+.popup-bottom input:active::placeholder {
+  color: var(--purple);
+}
+
+.popup-bottom button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.65rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  border-radius: 8px;
+  color: var(--white);
+  cursor: pointer;
+  border: transparent;
+  background: #8a8a8a;
+  transition: box-shadow 0.3s;
+}
+
+.popup-bottom button:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.popup-bottom button i {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin-left: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.popup-bottom button i::after {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 0;
+  background-color: var(--blue);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  z-index: -1;
+}
